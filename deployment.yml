@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-deployment
+  template:
+    metadata:
+      labels:
+        app: my-deployment
+    spec:
+      containers:
+        - name: my-app-container
+          image: ausaf-wohlig/python-img:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000

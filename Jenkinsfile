@@ -2,12 +2,6 @@ pipeline {
     agent any
     
     stages {
-        // stage("Code") {
-        //     steps {
-        //            withCredentials([usernamePassword(credentialsId: "github", passwordVariable: "githubPass", usernameVariable: "githubUser")])
-        //         git url: "https://github.com/ausaf-wohlig/python-pro.git", branch: "main"
-        //     }
-        // }
         stage("Build & Test") {
             steps {
                 sh "docker build -t python-img ."
